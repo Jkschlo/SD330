@@ -37,7 +37,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: url('https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/fridge-background.JPG');
+            background-image: url('https://jkschlo.github.io/SD330/fridge-background.JPG');
             background-size: cover;
         }
 
@@ -110,7 +110,7 @@
                 <p style="font-size: 20px;">&deg;F</p>
             </div>
             <img class="closed-fridge"
-                src="https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/closed-frige.jpg"
+                src="https://jkschlo.github.io/SD330/closed-frige.jpg"
                 alt="Refrigerator image" onclick="toggleFridge()" />
             <p style="text-align:center;">&copy; J.Schlosser - 10/10/2023</p>
         </div>
@@ -118,12 +118,12 @@
             <div id="clock"></div>
             <div>
                 <img class="youtube-image"
-                    src="https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/youtubeLogo.png"
+                    src="https://jkschlo.github.io/SD330/youtubeLogo.png"
                     alt="Youtube player image" onclick="openYouTube()" />
             </div>
             <div>
                 <img class="google-image"
-                    src="https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/browser.jpg"
+                    src="https://jkschlo.github.io/SD330/browser.jpg"
                     alt="Google browser image" onclick="openGoogle()" />
             </div>
         </div>
@@ -180,10 +180,10 @@
             var fridgeImage = document.querySelector(".closed-fridge");
 
             if (fridgeImageState === "close") {
-                fridgeImage.src = "https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/open-frige.jpg";
+                fridgeImage.src = "https://jkschlo.github.io/SD330/open-frige.jpg";
                 fridgeImageState = "open";
             } else {
-                fridgeImage.src = "https://raw.githubusercontent.com/Jkschlo/Smart-Refrigerator/main/closed-frige.jpg";
+                fridgeImage.src = "https://jkschlo.github.io/SD330/closed-frige.jpg";
                 fridgeImageState = "close";
             }
         }
