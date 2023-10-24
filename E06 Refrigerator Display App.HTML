@@ -76,6 +76,18 @@
             height: 100%;
             border: none;
         }
+
+        #app-box {
+            margin-top: 3%;
+            width: 75%;
+            height: 8%;
+            overflow: hidden;
+            border: 2px solid black;
+        }
+
+
+
+
     </style>
 </head>
 
@@ -91,6 +103,9 @@
             <div id="screen-box">
                 <iframe src="http://www.google.com"></iframe>
             </div>
+            <div id="app-box">
+                
+            </div>
         </div>
         <script>
             var powerOn = true; // Variable to track power state
@@ -102,7 +117,7 @@
                     // Turn off, replace with the image
                     screenBox.innerHTML = ''; // Clear the contents of screen-box
                     var img = document.createElement("img");
-                    img.src = 'https://jkschlo.github.io/SD330/calendar.jpg';
+                    img.src = 'https://jkschlo.github.io/SD330/full-fridge.jpg';
                     img.style.width = '100%';
                     img.style.height = '100%';
                     screenBox.appendChild(img);
