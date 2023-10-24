@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Smart Refrigerator</title>
     <style>
         body {
@@ -15,9 +14,9 @@
             margin: 0;
         }
 
-        .fridge {
-            width: 70%;
-            height: 700px;
+        .container {
+            width: 30%;
+            height: 900px;
             background-color: white;
             border: 2px solid black;
             display: flex;
@@ -28,160 +27,124 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            background-image: url('https://jkschlo.github.io/SD330/fridge-background.JPG');
+            justify-content: flex-start;
+            background-image: url('https://jkschlo.github.io/SD330/fridge.jpg');
             background-size: cover;
-        }
-
-        .openClose {
-            padding: 10px 20px;
-            font-size: 18px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
         }
 
         .closed-fridge {
             max-height: 80%;
         }
 
-        .closed-fridge:hover {
-            transform: scale(1.05);
-            transition: transform 0.3 ease;
-            cursor: pointer;
-        }
-
-        .google-image {
-            width: 100%;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .google-image:hover {
-            transform: scale(1.1);
-            transition: transform 0.3 ease;
-            cursor: pointer;
-        }
-
-        .youtube-image {
-            width: 100%;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 10%;
-        }
-
-        .youtube-image:hover {
-            transform: scale(1.1);
-            transition: transform 0.3 ease;
-            cursor: pointer;
-        }
-
         #clock {
             font-size: 50px;
-            margin-bottom: 10%;
+            margin-right: 5%;
             color: black;
             font-family: Impact, 'Arial Narrow Bold', sans-serif;
-            z-index: 1;
-            position: absolute;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 10px;
+        #powerButton {
+            color: black;
+            background-color: white;
+            width: 100px;
+            height: 40px;
+            margin-right: 5%;
+            /* Add margin to the right */
+        }
+
+        #temperature {
+            width: 73px;
+            font-size: 50px;
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            background: transparent;
+            border: none;
+        }
+
+        #util-holder {
+            margin-top: -5%;
+        }
+
+        #screen-box {
+            width: 75%;
+            height: 30%;
+            overflow: hidden;
+            border: 2px solid black;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 
 <body onload="init();">
-    <div class="fridge">
+    <div class="container">
         <div class="left">
-            <input style="color: white; background-color: green; width: 100px; height: 40px; margin-top: 10px;"
-                type="button" onclick="togglePower()" id="powerButton" value="Turn On">
-            <div style="display: flex; align-items: center;">
-                <input style="width: 33px;" id="temperature" type="number" value="40" />
-                <p style="font-size: 20px;">&deg;F</p>
+            <div id="util-holder" style="display: flex; align-items: center;">
+                <div id="clock"></div>
+                <input type="button" onclick="togglePower()" id="powerButton" value="Inside View">
+                <input id="temperature" type="number" value="40" />
+                <p style="font-size: 50px; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F</p>
             </div>
-            <img class="closed-fridge"
-                src="https://jkschlo.github.io/SD330/closed-frige.jpg"
-                alt="Refrigerator image" onclick="toggleFridge()" />
-            <p style="text-align:center;">&copy; J.Schlosser - 10/10/2023</p>
+            <div id="screen-box">
+                <iframe src="http://www.google.com"></iframe>
+            </div>
         </div>
-            <div id="clock"></div>
-    </div>
+        <script>
+            var powerOn = true; // Variable to track power state
 
-    <script>
-        
-        // Function to format the time with leading digits
-        function formatTime(time) {
-            return time.toString().padStart(2, '0');
-        }
+            function togglePower() {
+                var screenBox = document.getElementById("screen-box");
 
-        // Initialize the clock
-        function init() {
-            setInterval(updateClock, 1000);
-            updateClock();
-        }
+                if (powerOn) {
+                    // Turn off, replace with the image
+                    screenBox.innerHTML = ''; // Clear the contents of screen-box
+                    var img = document.createElement("img");
+                    img.src = 'https://jkschlo.github.io/SD330/calendar.jpg';
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    screenBox.appendChild(img);
+                    document.getElementById("powerButton").value = "Back";
+                } else {
+                    // Turn on, restore the Google iframe
+                    screenBox.innerHTML = ''; // Clear the contents of screen-box
+                    var iframe = document.createElement("iframe");
+                    iframe.src = "http://www.google.com";
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    screenBox.appendChild(iframe);
+                    document.getElementById("powerButton").value = "Inside View";
+                }
 
-        // Update the clock with the current time
-        function updateClock() {
-            var currentDate = new Date();
-            var hours = formatTime(currentDate.getHours());
-            var mins = formatTime(currentDate.getMinutes());
-            var secs = formatTime(currentDate.getSeconds());
-
-            var timeString = hours + ":" + mins + ":" + secs;
-
-            var outputElement = document.getElementById("clock");
-            outputElement.textContent = timeString;
-        }
-
-        var isFridgeOn = false;
-        var fridgeImageState = "close";
-
-        // Toggle the power of the fridge
-        function togglePower() {
-            var button = document.getElementById("powerButton");
-            var fridgeImage = document.querySelector(".closed-fridge");
-
-            isFridgeOn = !isFridgeOn;
-
-            if (isFridgeOn) {
-                button.value = "Turn Off";
-                button.style.backgroundColor = "red";
-                
-            } else {
-                button.value = "Turn On";
-                button.style.backgroundColor = "green";
+                powerOn = !powerOn; // Toggle the power state
             }
-        }
 
-        // Toggle the fridge door image
-        function toggleFridge() {
-            var fridgeImage = document.querySelector(".closed-fridge");
-
-            if (fridgeImageState === "close") {
-                fridgeImage.src = "https://jkschlo.github.io/SD330/open-frige.jpg";
-                fridgeImageState = "open";
-            } else {
-                fridgeImage.src = "https://jkschlo.github.io/SD330/closed-frige.jpg";
-                fridgeImageState = "close";
+            // Function to format the time with leading digits
+            function formatTime(time) {
+                return time.toString().padStart(2, '0');
             }
-        }
 
-        // Open the YouTube link in a new tab
-        function openYouTube() {
-            var youtubeURL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
-            window.open(youtubeURL, "_blank");
-        }
+            // Initialize the clock
+            function init() {
+                setInterval(updateClock, 1000);
+                updateClock();
+            }
 
-        // Open the Google link in a new tab
-        function openGoogle() {
-            var googleURL = "https://www.google.com/";
-            window.open(googleURL, "_blank");
-        }
-    </script>
+            // Update the clock with the current time
+            function updateClock() {
+                var currentDate = new Date();
+                var hours = formatTime(currentDate.getHours());
+                var mins = formatTime(currentDate.getMinutes());
+                var secs = formatTime(currentDate.getSeconds());
+
+                var timeString = hours + ":" + mins + ":" + secs;
+
+                var outputElement = document.getElementById("clock");
+                outputElement.textContent = timeString;
+            }
+        </script>
 </body>
 
 </html>
