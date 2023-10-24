@@ -33,23 +33,31 @@
             background-size: cover;
         }
 
+        .displayScreen {
+            
+        }
+
+
+
         .closed-fridge {
             max-height: 80%;
         }
 
         #clock {
             font-size: 50px;
-            margin-right: 5%;
+            margin-right: 2.5%;
             color: black;
             font-family: Impact, 'Arial Narrow Bold', sans-serif;
         }
 
+        #insideButton,
         #powerButton {
             color: black;
             background-color: white;
-            width: 100px;
+            width: 75px;
             height: 40px;
-            margin-right: 5%;
+            margin-right: 2.5%;
+            cursor: pointer;
         }
 
         #temperature {
@@ -60,7 +68,7 @@
             border: none;
         }
 
-        #util-holder {
+        .util-holder {
             margin-top: -5%;
         }
 
@@ -79,7 +87,7 @@
 
         #app-box {
             margin-top: 3%;
-            width: 60%;
+            width: 67%;
             height: 8%;
             overflow: hidden;
 
@@ -95,6 +103,7 @@
         .logo:hover {
             transform: scale(1.1);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -102,32 +111,34 @@
 <body onload="init();">
     <div class="container">
         <div class="left">
-            <div id="util-holder" style="display: flex; align-items: center;">
-                <div id="clock"></div>
-                <input type="button" onclick="togglePower()" id="powerButton" value="Inside View">
-                <input id="temperature" type="number" value="40" />
-                <p style="font-size: 50px; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F</p>
-            </div>
-            <div id="screen-box">
-
-            </div>
-            <div id="app-box">
-                <img class="logo" id="insta-logo" onclick="toggleInsta()" style="border-radius: 20%; margin-left: 2%;"
-                    src="https://jkschlo.github.io/SD330/instagram.jpg" alt="insta logo">
-                <img class="logo" id="twitter-logo" onclick="toggleTwitter()"
-                    src="https://jkschlo.github.io/SD330/twitter.png" alt="twitter logo">
-                <img class="logo" id="spotify-logo" onclick="toggleSpotify()" style="border-radius: 20%;"
-                    src="https://jkschlo.github.io/SD330/spotify.png" alt="spotify logo">
-                <img class="logo" id="google-logo" onclick="toggleGoogle()"
-                    src="https://jkschlo.github.io/SD330/google.png" alt="google logo">
-                <img class="logo" id="calendar-logo" onclick="toggleCalendar()"
-                    src="https://jkschlo.github.io/SD330/calendar-logo.png" alt="calendar logo">
-            </div>
+                <div class="util-holder" style="display: flex; align-items: center;">
+                    <div id="clock"></div>
+                    <input type="button" onclick="togglePower()" id="powerButton" value="On">
+                    <input type="button" onclick="toggleView()" id="insideButton" value="Inside View">
+                    <input id="temperature" type="number" value="40" />
+                    <p style="font-size: 50px; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F</p>
+                </div>
+                <div id="screen-box">
+                    <img src="https://jkschlo.github.io/SD330/drawApp.jpg" alt="draw app">
+                </div>
+                <div id="app-box">
+                    <img class="logo" id="insta-logo" onclick="toggleInsta()"
+                        style="border-radius: 20%; margin-left: 2%;" src="https://jkschlo.github.io/SD330/instagram.jpg"
+                        alt="insta logo">
+                    <img class="logo" id="twitter-logo" onclick="toggleTwitter()"
+                        src="https://jkschlo.github.io/SD330/twitter.png" alt="twitter logo">
+                    <img class="logo" id="spotify-logo" onclick="toggleSpotify()" style="border-radius: 20%;"
+                        src="https://jkschlo.github.io/SD330/spotify.png" alt="spotify logo">
+                    <img class="logo" id="google-logo" onclick="toggleGoogle()"
+                        src="https://jkschlo.github.io/SD330/google.png" alt="google logo">
+                    <img class="logo" id="calendar-logo" onclick="toggleCalendar()"
+                        src="https://jkschlo.github.io/SD330/calendar-logo.png" alt="calendar logo">
+                </div>
         </div>
         <script>
             var powerOn = true; // Variable to track power state
 
-            function togglePower() {
+            function toggleView() {
                 var screenBox = document.getElementById("screen-box");
 
                 if (powerOn) {
@@ -138,7 +149,7 @@
                     img.style.width = '100%';
                     img.style.height = '100%';
                     screenBox.appendChild(img);
-                    document.getElementById("powerButton").value = "Back";
+                    document.getElementById("insideButton").value = "Back";
                 } else {
                     // Turn on, restore the Google iframe
                     screenBox.innerHTML = ''; // Clear the contents of screen-box
@@ -147,111 +158,69 @@
                     iframe.style.width = '100%';
                     iframe.style.height = '100%';
                     screenBox.appendChild(iframe);
-                    document.getElementById("powerButton").value = "Inside View";
+                    document.getElementById("insideButton").value = "Inside View";
                 }
 
                 powerOn = !powerOn; // Toggle the power state
+            }
+
+            function togglePower() {
+
             }
 
             function toggleInsta() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "https://www.instagram.com/";
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    screenBox.appendChild(iframe);
-                } else {
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "";
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://www.instagram.com/";
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                screenBox.appendChild(iframe);
             }
 
             function toggleTwitter() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "https://twitter.com/";
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    screenBox.appendChild(iframe);
-                } else {
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "";
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://twitter.com/";
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                screenBox.appendChild(iframe);
             }
 
             function toggleSpotify() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "https://spotify.com/";
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    screenBox.appendChild(iframe);
-                } else {
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "";
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://spotify.com/";
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                screenBox.appendChild(iframe);
             }
 
             function toggleGoogle() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "https://google.com/";
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    screenBox.appendChild(iframe);
-                } else {
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "";
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://google.com/";
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                screenBox.appendChild(iframe);
             }
 
             function toggleCalendar() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var img = document.createElement("img");
-                    img.src = 'https://jkschlo.github.io/SD330/calendar.jpg';
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    screenBox.appendChild(img);
-                } else {
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    iframe.src = "";
-
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var img = document.createElement("img");
+                img.src = 'https://jkschlo.github.io/SD330/calendar.jpg';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                screenBox.appendChild(img);
             }
 
             // Function to format the time with leading digits
