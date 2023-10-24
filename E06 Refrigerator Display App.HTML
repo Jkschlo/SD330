@@ -119,7 +119,6 @@
                     <p style="font-size: 50px; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F</p>
                 </div>
                 <div id="screen-box">
-                    <img src="https://jkschlo.github.io/SD330/drawApp." alt="draw app">
                 </div>
                 <div id="app-box">
                     <img class="logo" id="insta-logo" onclick="toggleInsta()"
@@ -136,34 +135,18 @@
                 </div>
         </div>
         <script>
-            var powerOn = true; // Variable to track power state
+            var pushed = true; // Variable to track power state
 
             function toggleView() {
                 var screenBox = document.getElementById("screen-box");
 
-                if (powerOn) {
-                    // Turn off, replace with the image
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var img = document.createElement("img");
-                    img.src = 'https://jkschlo.github.io/SD330/full-fridge.jpg';
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    screenBox.appendChild(img);
-                    document.getElementById("insideButton").value = "Back";
-                } else {
-                    // Turn on, restore the Google iframe
-                    screenBox.innerHTML = ''; // Clear the contents of screen-box
-                    var iframe = document.createElement("iframe");
-                    img.src = 'https://jkschlo.github.io/SD330/drawApp.';
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    screenBox.appendChild(img);
-                    document.getElementById("insideButton").value = "Inside View";
-                }
-
-                powerOn = !powerOn; // Toggle the power state
+                screenBox.innerHTML = ''; // Clear the contents of screen-box
+                var img = document.createElement("img");
+                img.src = 'https://jkschlo.github.io/SD330/full-fridge.jpg';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                screenBox.appendChild(img);
             }
-
             function togglePower() {
 
             }
