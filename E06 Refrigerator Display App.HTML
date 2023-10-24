@@ -29,14 +29,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             background-image: url('https://jkschlo.github.io/SD330/fridge-background.JPG');
             background-size: cover;
         }
@@ -91,6 +83,8 @@
             margin-bottom: 10%;
             color: black;
             font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            z-index: 1;
+            position: absolute;
         }
 
         footer {
@@ -114,19 +108,7 @@
                 alt="Refrigerator image" onclick="toggleFridge()" />
             <p style="text-align:center;">&copy; J.Schlosser - 10/10/2023</p>
         </div>
-        <div class="right">
             <div id="clock"></div>
-            <div>
-                <img class="youtube-image"
-                    src="https://jkschlo.github.io/SD330/youtubeLogo.png"
-                    alt="Youtube player image" onclick="openYouTube()" />
-            </div>
-            <div>
-                <img class="google-image"
-                    src="https://jkschlo.github.io/SD330/browser.jpg"
-                    alt="Google browser image" onclick="openGoogle()" />
-            </div>
-        </div>
     </div>
 
     <script>
