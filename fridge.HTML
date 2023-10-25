@@ -209,6 +209,16 @@
                 screenBox.appendChild(img);
             }
 
+            function toggleDrawApp() {
+                var screenBox = document.getElementById("screen-box");
+                screenBox.innerHTML = '';
+                var img = document.createElement("img");
+                img.src = 'https://jkschlo.github.io/SD330/drawApp.jpg';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                screenBox.appendChild(img);
+            }
+
             // Function to format the time with leading digits
             function formatTime(time) {
                 return time.toString().padStart(2, '0');
@@ -229,7 +239,7 @@
                 setInterval(updateClock, 1000);
                 updateClock();
                 togglePower();
-                toggleCalendar();
+                toggleDrawApp();
             }
         </script>
     </div>
