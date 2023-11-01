@@ -60,13 +60,18 @@
         }
 
         #insideButton,
-        #powerButton {
+        #powerButton,
+         .timerStart {
             color: black;
             background-color: white;
             width: 75px;
             height: 40px;
             margin-right: 2%;
             cursor: pointer;
+        }
+
+        #timerInput {
+            width: 30px;
         }
 
         #temperature {
@@ -82,7 +87,7 @@
         }
 
         #screen-box {
-            margin-top: -10%;
+            margin-top: -5%;
             width: 80%;
             height: 30%;
             overflow: hidden;
@@ -134,6 +139,8 @@
                 <p id="degree" onclick="toggleTemperatureFormat()" 
                     style="font-size: 50px; cursor: pointer; color: black; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F
                 </p>
+                <input id="timerInput" type="number" placeholder="Set Timer (minutes)" />
+                <button class="timerStart" onclick="startTimer()">Start Timer</button>
             </div>
             <div id="screen-box">
             </div>
@@ -155,6 +162,10 @@
             var isFridgeOn = false; // Variable to track power state
             var is24HourFormat = true; // Variable to track clock format
             var isFahrenheit = true; // Variable to track temperature format
+
+            // Add an audio element for playing the MP3 file
+            var audio = new Audio('netflix-boom.mp3');
+            var alarmAudio = new Audio('alarm.mp3');
 
             function togglePower() {
                 isFridgeOn = !isFridgeOn;
@@ -199,6 +210,9 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+
+                // Play the MP3 file
+                audio.play();
             }
 
             function toggleSpotify() {
@@ -286,6 +300,60 @@
                 }
             }
 
+            // Timer functions
+            var timerInterval;
+            function startTimer() {
+                var timerInput = document.getElementById("timerInput");
+                var minutes = parseInt(timerInput.value, 10);
+
+                if (isNaN(minutes) || minutes <= 0) {
+                    alert("Please enter a valid positive number of minutes.");
+                    return;
+                }
+
+                var seconds = minutes * 60;
+                startCountdown(seconds);
+            }
+
+            function startCountdown(seconds) {
+                clearInterval(timerInterval);
+
+                timerInterval = setInterval(function () {
+                    seconds--;
+
+                    if (seconds <= 0) {
+                        clearInterval(timerInterval);
+                        // Timer is up, play the alarm sound
+                        playAlarm();
+                    }
+
+                    // Display the remaining time
+                    var minutes = Math.floor(seconds / 60);
+                    var remainingSeconds = seconds % 60;
+                    var countdownElement = document.getElementById("clock");
+                    countdownElement.textContent = formatTime(minutes) + ":" + formatTime(remainingSeconds);
+                }, 1000);
+            }
+
+            function playAlarm() {
+                // Play the alarm sound effect
+                alarmAudio.play();
+            }
+
+            function stopTimer() {
+                clearInterval(timerInterval);
+                var countdownElement = document.getElementById("clock");
+                countdownElement.textContent = "Timer Stopped";
+            }
+
+            function resetTimer() {
+                clearInterval(timerInterval);
+                var countdownElement = document.getElementById("clock");
+                countdownElement.textContent = "00:00";
+                var timerInput = document.getElementById("timerInput");
+                timerInput.value = "";
+            }
+            
             // Initialize the clock
             function init() {
                 setInterval(updateClock, 1000);
