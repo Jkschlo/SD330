@@ -138,9 +138,9 @@
             <div id="screen-box">
             </div>
             <div id="app-box">
-                <img class="logo" id="insta-logo" onclick="toggleInsta()" style="border-radius: 20%; margin-left: 2%;"
-                    src="https://jkschlo.github.io/SD330/instagram.jpg" alt="insta logo">
-                <img class="logo" id="netflix-logo" onclick="toggleNetflix()"
+                <img class="logo" id="weather-logo" onclick="toggleWeather()" style="border-radius: 20%; margin-left: 2%;"
+                    src="https://jkschlo.github.io/SD330/weather.jpg" alt="weather logo">
+                <img class="logo" id="netflix-logo" onclick="toggleNetflix()" style="border-radius: 20%;"
                     src="https://jkschlo.github.io/SD330/netflix.png" alt="netflix logo">
                 <img class="logo" id="spotify-logo" onclick="toggleSpotify()" style="border-radius: 20%;"
                     src="https://jkschlo.github.io/SD330/spotify.png" alt="spotify logo">
@@ -181,11 +181,11 @@
                 screenBox.appendChild(img);
             }
 
-            function toggleInsta() {
+            function toggleWeather() {
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = "https://jkschlo.github.io/SD330/insta-img.JPG";
+                img.src = "https://jkschlo.github.io/SD330/weather-img.JPG";
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
@@ -195,7 +195,7 @@
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = "https://jkschlo.github.io/SD330/twitter-img.JPG";
+                img.src = "https://jkschlo.github.io/SD330/netflix-img.JPG";
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
