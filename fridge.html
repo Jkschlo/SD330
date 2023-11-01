@@ -61,7 +61,7 @@
 
         #insideButton,
         #powerButton,
-         .timerStart {
+        .timerStart {
             color: black;
             background-color: white;
             width: 75px;
@@ -72,6 +72,8 @@
 
         #timerInput {
             width: 30px;
+            margin-left: 2%;
+            margin-right: 2%;
         }
 
         #temperature {
@@ -132,12 +134,13 @@
                 <input style="color: white; background-color: green;" type="button" onclick="togglePower()"
                     id="powerButton" value="On/Off">
                 <input type="button" onclick="toggleView()" id="insideButton" value="Inside View">
-                <input id="temperature" type="number" value="40" style="cursor: pointer;"/>
+                <input id="temperature" type="number" value="40" style="cursor: pointer;" />
                 <p style="font-size: 30px; font-family: Impact, 'Arial Narrow Bold', sans-serif; color:transparent; ">
                     .
                 </p>
-                <p id="degree" onclick="toggleTemperatureFormat()" 
-                    style="font-size: 50px; cursor: pointer; color: black; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F
+                <p id="degree" onclick="toggleTemperatureFormat()"
+                    style="font-size: 50px; cursor: pointer; color: black; font-family: Impact, 'Arial Narrow Bold', sans-serif;">
+                    &deg;F
                 </p>
                 <input id="timerInput" type="number" placeholder="Set Timer (minutes)" />
                 <button class="timerStart" onclick="startTimer()">Start Timer</button>
@@ -145,8 +148,9 @@
             <div id="screen-box">
             </div>
             <div id="app-box">
-                <img class="logo" id="weather-logo" onclick="toggleWeather()" style="border-radius: 20%; margin-left: 2%;"
-                    src="https://jkschlo.github.io/SD330/weather.jpg" alt="weather logo">
+                <img class="logo" id="weather-logo" onclick="toggleWeather()"
+                    style="border-radius: 20%; margin-left: 2%;" src="https://jkschlo.github.io/SD330/weather.jpg"
+                    alt="weather logo">
                 <img class="logo" id="netflix-logo" onclick="toggleNetflix()" style="border-radius: 20%;"
                     src="https://jkschlo.github.io/SD330/netflix.png" alt="netflix logo">
                 <img class="logo" id="spotify-logo" onclick="toggleSpotify()" style="border-radius: 20%;"
@@ -165,7 +169,7 @@
 
             // Add an audio element for playing the MP3 file
             var audio = new Audio('netflix-boom.mp3');
-            var alarmAudio = new Audio('alarm.mp3');
+            var alarmAudio = new Audio('alarm.wav');
 
             function togglePower() {
                 isFridgeOn = !isFridgeOn;
@@ -324,7 +328,7 @@
                     if (seconds <= 0) {
                         clearInterval(timerInterval);
                         // Timer is up, play the alarm sound
-                        playAlarm();
+                        alarmAudio.play();
                     }
 
                     // Display the remaining time
@@ -333,11 +337,6 @@
                     var countdownElement = document.getElementById("clock");
                     countdownElement.textContent = formatTime(minutes) + ":" + formatTime(remainingSeconds);
                 }, 1000);
-            }
-
-            function playAlarm() {
-                // Play the alarm sound effect
-                alarmAudio.play();
             }
 
             function stopTimer() {
@@ -353,7 +352,7 @@
                 var timerInput = document.getElementById("timerInput");
                 timerInput.value = "";
             }
-            
+
             // Initialize the clock
             function init() {
                 setInterval(updateClock, 1000);
