@@ -34,6 +34,14 @@
             background-size: cover;
         }
 
+        /* .screen {
+            height: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } */
+
         .closed-fridge {
             max-height: 80%;
         }
@@ -41,8 +49,14 @@
         #clock {
             font-size: 50px;
             margin-right: 2.5%;
-            color: black;
             font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            cursor: pointer;
+        }
+
+        #clock:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
         }
 
         #insideButton,
@@ -68,6 +82,7 @@
         }
 
         #screen-box {
+            margin-top: -10%;
             width: 80%;
             height: 30%;
             overflow: hidden;
@@ -106,33 +121,40 @@
 <body onload="init();">
     <div class="container">
         <div class="left">
+            <!-- <div class="screen" style="background-color: black; opacity: 30%;"> -->
             <div class="util-holder" style="display: flex; align-items: center;">
-                <div id="clock"></div>
+                <div id="clock" onclick="toggleClockFormat()"></div>
                 <input style="color: white; background-color: green;" type="button" onclick="togglePower()"
-                    id="powerButton" value= "On/Off">
+                    id="powerButton" value="On/Off">
                 <input type="button" onclick="toggleView()" id="insideButton" value="Inside View">
-                <input id="temperature" type="number" value="40" />
-                <p style="font-size: 30px; font-family: Impact, 'Arial Narrow Bold', sans-serif; color:transparent; ">.
+                <input id="temperature" type="number" value="40" style="cursor: pointer;"/>
+                <p style="font-size: 30px; font-family: Impact, 'Arial Narrow Bold', sans-serif; color:transparent; ">
+                    .
                 </p>
-                <p id="degree" style="font-size: 50px; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F</p>
+                <p id="degree" onclick="toggleTemperatureFormat()" 
+                    style="font-size: 50px; cursor: pointer; color: black; font-family: Impact, 'Arial Narrow Bold', sans-serif;">&deg;F
+                </p>
             </div>
             <div id="screen-box">
             </div>
             <div id="app-box">
                 <img class="logo" id="insta-logo" onclick="toggleInsta()" style="border-radius: 20%; margin-left: 2%;"
                     src="https://jkschlo.github.io/SD330/instagram.jpg" alt="insta logo">
-                <img class="logo" id="twitter-logo" onclick="toggleTwitter()"
-                    src="https://jkschlo.github.io/SD330/twitter.png" alt="twitter logo">
+                <img class="logo" id="netflix-logo" onclick="toggleNetflix()"
+                    src="https://jkschlo.github.io/SD330/netflix.png" alt="netflix logo">
                 <img class="logo" id="spotify-logo" onclick="toggleSpotify()" style="border-radius: 20%;"
                     src="https://jkschlo.github.io/SD330/spotify.png" alt="spotify logo">
                 <img class="logo" id="google-logo" onclick="toggleGoogle()"
                     src="https://jkschlo.github.io/SD330/google.png" alt="google logo">
                 <img class="logo" id="calendar-logo" onclick="toggleCalendar()"
                     src="https://jkschlo.github.io/SD330/calendar-logo.png" alt="calendar logo">
+                <!-- </div> -->
             </div>
         </div>
         <script>
             var isFridgeOn = false; // Variable to track power state
+            var is24HourFormat = true; // Variable to track clock format
+            var isFahrenheit = true; // Variable to track temperature format
 
             function togglePower() {
                 isFridgeOn = !isFridgeOn;
@@ -163,17 +185,17 @@
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = "https://jkschlo.github.io/SD330/fridgeapp/insta-img.JPG";
+                img.src = "https://jkschlo.github.io/SD330/insta-img.JPG";
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
             }
 
-            function toggleTwitter() {
+            function toggleNetflix() {
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = "https://jkschlo.github.io/SD330/fridgeapp/twitter-img.JPG";
+                img.src = "https://jkschlo.github.io/SD330/twitter-img.JPG";
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
@@ -183,7 +205,7 @@
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = 'https://jkschlo.github.io/SD330/fridgeapp/spotify-img.JPG';
+                img.src = 'https://jkschlo.github.io/SD330/spotify-img.JPG';
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
@@ -193,7 +215,7 @@
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = "https://jkschlo.github.io/SD330/fridgeapp/googlebrowser-img.JPG";
+                img.src = "https://jkschlo.github.io/SD330/googlebrowser-img.JPG";
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
@@ -219,19 +241,49 @@
                 screenBox.appendChild(img);
             }
 
-            // Function to format the time with leading digits
-            function formatTime(time) {
-                return time.toString().padStart(2, '0');
+            function toggleClockFormat() {
+                is24HourFormat = !is24HourFormat;
+                updateClock();
             }
 
             function updateClock() {
                 var currentDate = new Date();
-                var hours = formatTime(currentDate.getHours());
+                var hours = is24HourFormat ? formatTime(currentDate.getHours()) : format12HourTime(currentDate.getHours());
                 var mins = formatTime(currentDate.getMinutes());
                 var secs = formatTime(currentDate.getSeconds());
                 var timeString = hours + ":" + mins + ":" + secs;
                 var outputElement = document.getElementById("clock");
                 outputElement.textContent = timeString;
+            }
+
+            // Function to format the time with leading digits (24-hour format)
+            function formatTime(time) {
+                return time.toString().padStart(2, '0');
+            }
+
+            // Function to format the time with leading digits (12-hour format)
+            function format12HourTime(time) {
+                var formattedTime = time % 12;
+                if (formattedTime === 0) {
+                    formattedTime = 12;
+                }
+                return formattedTime.toString().padStart(2, '0');
+            }
+
+            function toggleTemperatureFormat() {
+                isFahrenheit = !isFahrenheit;
+                updateTemperature();
+            }
+
+            function updateTemperature() {
+                var temperature = document.getElementById("temperature");
+                var degree = document.getElementById("degree");
+
+                if (isFahrenheit) {
+                    degree.textContent = "\u00B0F";
+                } else {
+                    degree.textContent = "\u00B0C";
+                }
             }
 
             // Initialize the clock
