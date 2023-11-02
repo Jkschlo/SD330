@@ -147,6 +147,9 @@
             </div>
             <div id="screen-box">
             </div>
+            <div id="text-field" style="display: none; margin-top: 3%;">
+                <input type="text" id="appTextField" placeholder="Add something to the list!">
+            </div>
             <div id="app-box">
                 <img class="logo" id="weather-logo" onclick="toggleWeather()"
                     style="border-radius: 20%; margin-left: 2%;" src="https://jkschlo.github.io/SD330/weather.jpg"
@@ -157,8 +160,8 @@
                     src="https://jkschlo.github.io/SD330/spotify.png" alt="spotify logo">
                 <img class="logo" id="google-logo" onclick="toggleGoogle()"
                     src="https://jkschlo.github.io/SD330/google.png" alt="google logo">
-                <img class="logo" id="calendar-logo" onclick="toggleCalendar()"
-                    src="https://jkschlo.github.io/SD330/calendar-logo.png" alt="calendar logo">
+                <img class="logo" id="notes-logo" onclick="toggleNotes()"
+                    src="https://jkschlo.github.io/SD330/notes.png" alt="notes logo">
                 <!-- </div> -->
             </div>
         </div>
@@ -184,6 +187,7 @@
                 document.getElementById("screen-box").style.display = isFridgeOn ? "block" : "none";
                 document.getElementById("app-box").style.display = isFridgeOn ? "block" : "none";
                 document.getElementById("degree").style.display = isFridgeOn ? "block" : "none";
+                document.getElementById("textField").style.display = isFridgeOn ? "block" : "none";
             }
 
             function toggleView() {
@@ -204,6 +208,7 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+                hideTextField()
             }
 
             function toggleNetflix() {
@@ -214,6 +219,7 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+                hideTextField()
 
                 // Play the MP3 file
                 audio.play();
@@ -227,6 +233,7 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+                hideTextField()
             }
 
             function toggleGoogle() {
@@ -237,16 +244,20 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+                hideTextField()
             }
 
-            function toggleCalendar() {
+            function toggleNotes() {
                 var screenBox = document.getElementById("screen-box");
                 screenBox.innerHTML = '';
                 var img = document.createElement("img");
-                img.src = 'https://jkschlo.github.io/SD330/calendar.jpg';
+                img.src = 'https://jkschlo.github.io/SD330/drawApp1.jpg';
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+
+                // Show the text field
+                showTextField();
             }
 
             function toggleDrawApp() {
@@ -257,6 +268,20 @@
                 img.style.width = '100%';
                 img.style.height = '100%';
                 screenBox.appendChild(img);
+
+                // Show the text field
+                showTextField();
+            }
+
+            function showTextField() {
+                var textField = document.getElementById("text-field");
+                textField.style.display = "block";
+            }
+
+            // Function to hide the text field
+            function hideTextField() {
+                var textField = document.getElementById("text-field");
+                textField.style.display = "none";
             }
 
             function toggleClockFormat() {
@@ -311,7 +336,7 @@
                 var minutes = parseInt(timerInput.value, 10);
 
                 if (isNaN(minutes) || minutes <= 0) {
-                    alert("Please enter a valid positive number of minutes.");
+                    alert("Please enter your timer amount in mins");
                     return;
                 }
 
@@ -337,20 +362,6 @@
                     var countdownElement = document.getElementById("clock");
                     countdownElement.textContent = formatTime(minutes) + ":" + formatTime(remainingSeconds);
                 }, 1000);
-            }
-
-            function stopTimer() {
-                clearInterval(timerInterval);
-                var countdownElement = document.getElementById("clock");
-                countdownElement.textContent = "Timer Stopped";
-            }
-
-            function resetTimer() {
-                clearInterval(timerInterval);
-                var countdownElement = document.getElementById("clock");
-                countdownElement.textContent = "00:00";
-                var timerInput = document.getElementById("timerInput");
-                timerInput.value = "";
             }
 
             // Initialize the clock
