@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstaJam</title>
-    <link rel="stylesheet" type="text/css" href="/css/careers_styles.css"> <!-- to to CSS styles -->
+    <title>FoxBooks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <!-- CDN for FontAwesome for logo -->
 </head>
 
 <body>
@@ -17,8 +15,8 @@
 
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="/home" id="navbar__pic"><i class="fas fa-compact-disc"></i></a>
-            <a href="/home" id="navbar__logo">INSTAJAM</a>
+            <a href="/" id="navbar__pic"><i class="fa-solid fa-book"></i></a>
+            <a href="/" id="navbar__logo">FoxBooks</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -26,10 +24,10 @@
             </div>
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="/home" class="navbar__links"> Home </a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" class="navbar__links"> Home </a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="/login" class="button"> Login </a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/login.html" class="button"> Login </a>
                 </li>
             </ul>
         </div>
@@ -41,10 +39,10 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>Careers</h1>
-                <p>Unfortunately, we are not offering positions at this time.</p>
+                <p>Marist College</p>
             </div>
             <div class="main__img--container">
-                <img src="img/Troll.svg" alt="pic" id="main__img">
+                <img src="https://jkschlo.github.io/SD330/FoxBooks/images/aboutUs.svg" alt="pic" id="main__img">
             </div>
         </div>
     </div>
@@ -56,15 +54,15 @@
             <div class="footer__link--wrapper">
                 <div class="footer__link--items">
                     <h2>Information</h2>
-                    <a href="/contact">Contact Us</a>
-                    <a href="/about">About Us</a>
-                    <a href="/careers">Careers</a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/contact.html">Contact Us</a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/about.html">About Us</a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/careers.html">Careers</a>
                 </div>
                 <div class="footer__link--items">
                     <h2>The Code</h2>
-                    <a href="https://github.com/Jkschlo/Jkschlo">JavaScript</a>
-                    <a href="https://github.com/Jkschlo/Jkschlo">CSS</a>
-                    <a href="https://github.com/Jkschlo/Jkschlo">HTML</a>
+                    <a href="https://github.com/Jkschlo/SD330/tree/main/FoxBooks">JavaScript</a>
+                    <a href="https://github.com/Jkschlo/SD330/tree/main/FoxBooks">CSS</a>
+                    <a href="https://github.com/Jkschlo/SD330/tree/main/FoxBooks">HTML</a>
                 </div>
             </div>
             <div class="footer__link--wrapper">
@@ -79,9 +77,9 @@
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="footer__logo">
-                    <a href="/" id="footer__logo"><i class="fas fa-compact-disc"></i> INSTAJAM</a>
+                    <a href="/" id="footer__logo"><i class="fa-solid fa-book"></i>FoxBooks</a>
                 </div>
-                <p class="website__rights">© INSTAJAM 2023. All rights reserved</p>
+                <p class="website__rights">© FoxBooks 2023. All rights reserved</p>
                 <div class="social__icons">
                     <a href="https://www.facebook.com/jackson.schlosser.37" class="social__icon--link" target="_blank">
                         <i class="fab fa-facebook"></i>
@@ -108,8 +106,318 @@
             </div>
         </div>
     </div>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
 
-    <script src="/js/app.js"></script>
+
+        .navbar {
+            background: #131313;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        /* navbar space */
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        /* logo formatting */
+        #navbar__pic {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            mask-clip: padding-box;
+            -moz-backgroun-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: -50px;
+        }
+
+        /* navbar "INSTAJAM" formatting */
+        #navbar__logo {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            mask-clip: padding-box;
+            -moz-backgroun-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: -445px;
+            /* Moves Logo next to the pic */
+        }
+
+        /* menu items formatting */
+        .navbar__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            margin-right: -100px;
+        }
+
+        .navbar__item {
+            height: 80px;
+        }
+
+        /* link look */
+        .navbar__links {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+        }
+
+        /* button formatting */
+        .navbar__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        /* button display */
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background-color: firebrick;
+            color: white;
+
+        }
+
+        .button:hover {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+        }
+
+        .navbar__links:hover {
+            color: firebrick;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section CSS */
+
+        .main {
+            background-color: #141414;
+        }
+
+        .main__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+            height: 100vh;
+            background-color: #141414;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            padding: 0 50px;
+        }
+
+        /* Format "INSTAJAM" */
+        .main__content h1 {
+            font-size: 7rem;
+            text-align: center;
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            margin-top: -10rem;
+        }
+
+        /* Format "The playlist playground." */
+        .main__content p {
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .main__img--container {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        #main__img {
+            height: 325px;
+            width: 375px;
+        }
+
+
+        /* Footer CSS */
+
+        .footer__container {
+            background-color: #141414;
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* footer logo formatting */
+        #footer__logo {
+            color: white;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .footer__links {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer__link--wrapper {
+            display: flex;
+        }
+
+        /* formats footer link items in column and correct spacing */
+        .footer__link--items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 16px;
+            text-align: left;
+            width: 160px;
+            box-sizing: border-box;
+        }
+
+        /* adds a bit of space between header and items */
+        .footer__link--items h2 {
+            margin-bottom: 16px;
+        }
+
+        /* formats h2 */
+        .footer__link--items>h2 {
+            font-size: 1.5rem;
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+        }
+
+        .footer__link--items a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Social Icons */
+
+        .social__icon--link {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* add space between footer elements */
+        .social__media {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* footer line up, center on screen */
+        .social__media--wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+        }
+
+        /* social media formatting */
+        .social__icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 240px;
+        }
+
+        /* logo formatting */
+        .social__logo {
+            color: white;
+            justify-self: flex-start;
+            margin-left: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        /* footer color */
+        .website__rights {
+            color: white;
+        }
+    </style>
+
+    <script></script>
+</body>
+
+</html>
+
 </body>
 
 </html>
