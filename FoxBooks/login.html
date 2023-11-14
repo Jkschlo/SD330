@@ -52,7 +52,7 @@
                         <input type="password" id="password" required>
                         <span class="eye">
                             <i id="hide" class="fa fa-eye"></i>
-                            <i id="show" class="fa fa-eye-slash"></i>
+                            <i id="show" class="fa fa-eye-slash" style="display: none;"></i>
                         </span>
                         <label>Password</label>
                     </div>
@@ -62,7 +62,8 @@
                 <li class="navbar__btn">
                     <a href="https://jkschlo.github.io/SD330/FoxBooks/inventory.html" class="button"> Login </a>
                 </li>
-                <div class="signup_link">Not a member? <a href="https://jkschlo.github.io/SD330/FoxBooks/signup.html">Sign Up</a></div>
+                <div class="signup_link">Not a member? <a
+                        href="https://jkschlo.github.io/SD330/FoxBooks/signup.html">Sign Up</a></div>
             </form>
         </div>
     </div>
@@ -445,35 +446,36 @@
     </style>
 
     <script>
-        //JavaScript DOM Event for password
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the password input and eye icons
+            const passwordInput = document.getElementById("password");
+            const showPasswordIcon = document.getElementById("show");
+            const hidePasswordIcon = document.getElementById("hide");
 
-        // Get the password input and eye icons
-        const passwordInput = document.getElementById("password");
-        const showPasswordIcon = document.getElementById("hide");
-        const hidePasswordIcon = document.getElementById("show");
+            if (showPasswordIcon) {
+                showPasswordIcon.addEventListener("click", function () {
+                    // Change the input type to text
+                    passwordInput.type = "text";
 
-        if (showPasswordIcon) {
-            showPasswordIcon.addEventListener("click", function () {
-                // Change the input type to text
-                passwordInput.type = "text";
+                    // Show the hide icon and hide the show icon
+                    hidePasswordIcon.style.display = "inline";  // Change to "inline"
+                    showPasswordIcon.style.display = "none";
+                });
+            }
 
-                // Show the hide icon and hide the show icon
-                hidePasswordIcon.style.display = "block";
-                showPasswordIcon.style.display = "none";
-            });
-        }
+            // Add a click event listener to the hide icon
+            if (hidePasswordIcon) {
+                hidePasswordIcon.addEventListener("click", function () {
+                    // Change the input type to password
+                    passwordInput.type = "password";
 
-        // Add a click event listener to the hide icon
-        if (hidePasswordIcon) {
-            hidePasswordIcon.addEventListener("click", function () {
-                // Change the input type to password
-                passwordInput.type = "password";
-
-                // Show the show icon and hide the hide icon
-                showPasswordIcon.style.display = "block";
-                hidePasswordIcon.style.display = "none";
-            });
-        }
+                    // Show the show icon and hide the hide icon
+                    showPasswordIcon.style.display = "inline";  // Change to "inline"
+                    hidePasswordIcon.style.display = "none";
+                });
+            }
+        });
 
     </script>
 </body>
