@@ -52,7 +52,7 @@
                         <input type="password" id="password" required>
                         <span class="eye">
                             <i id="hide" class="fa fa-eye"></i>
-                            <i id="hide2" class="fa fa-eye-slash"></i>
+                            <i id="show" class="fa fa-eye-slash"></i>
                         </span>
                         <label>Password</label>
                     </div>
@@ -450,7 +450,7 @@
         // Get the password input and eye icons
         const passwordInput = document.getElementById("password");
         const showPasswordIcon = document.getElementById("hide");
-        const hidePasswordIcon = document.getElementById("hide2");
+        const hidePasswordIcon = document.getElementById("show");
 
         if (showPasswordIcon) {
             showPasswordIcon.addEventListener("click", function () {
