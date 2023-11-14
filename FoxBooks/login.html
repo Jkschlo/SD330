@@ -475,34 +475,6 @@
             });
         }
 
-        //JavaScript DOM Event for Confirm Password
-
-        // Get the password input and eye icons
-        const confirmPasswordInput = document.getElementById("confirmPassword");
-        const showConfirmPasswordIcon = document.getElementById("cp_hide");
-        const hideConfirmPasswordIcon = document.getElementById("cp_hide2");
-
-        if (showConfirmPasswordIcon) {
-            showConfirmPasswordIcon.addEventListener("click", function () {
-                // Change the input type to text
-                confirmPasswordInput.type = "text";
-
-                // Show the hide icon and hide the show icon
-                hideConfirmPasswordIcon.style.display = "block";
-                showConfirmPasswordIcon.style.display = "none";
-            });
-        }
-
-        if (hideConfirmPasswordIcon) {
-            hideConfirmPasswordIcon.addEventListener("click", function () {
-                // Change the input type to password
-                confirmPasswordInput.type = "password";
-
-                // Show the show icon and hide the hide icon
-                showConfirmPasswordIcon.style.display = "block";
-                hideConfirmPasswordIcon.style.display = "none";
-            });
-        }
     </script>
 </body>
 

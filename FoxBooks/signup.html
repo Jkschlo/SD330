@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstaJam</title>
-    <link rel="stylesheet" type="text/css" href="/css/signup_styles.css">
+    <title>FoxBooks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
@@ -16,8 +15,8 @@
 
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="/" id="navbar__pic"><i class="fas fa-compact-disc"></i></a>
-            <a href="/" id="navbar__logo">INSTAJAM</a>
+            <a href="/" id="navbar__pic"><i class="fa-solid fa-book"></i></a>
+            <a href="/" id="navbar__logo">FoxBooks</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -25,10 +24,13 @@
             </div>
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="/home" class="navbar__links"> Home </a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" class="navbar__links"> Home </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/inventory.html" class="navbar__links"> Books </a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="/login" class="button"> Login </a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/login.html" class="button"> Login </a>
                 </li>
             </ul>
         </div>
@@ -68,7 +70,8 @@
                 <div class="login__btn">
                     <button class="button">Sign Up</button>
                 </div>
-                <div class="signup_link">Already a member? <a href="/login">Login</a></div>
+                <div class="signup_link">Already a member? <a
+                        href="https://jkschlo.github.io/SD330/FoxBooks/login.html">Login</a></div>
             </form>
         </div>
     </div>
@@ -79,9 +82,9 @@
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="footer__logo">
-                    <a href="/" id="footer__logo"><i class="fas fa-compact-disc"></i> INSTAJAM</a>
+                    <a href="/" id="footer__logo"><i class="fa-solid fa-book"></i> FoxBooks</a>
                 </div>
-                <p class="website__rights">© INSTAJAM 2023. All rights reserved</p>
+                <p class="website__rights">© J.Schlosser 2023. All rights reserved</p>
                 <div class="social__icons">
                     <a href="https://www.facebook.com/jackson.schlosser.37" class="social__icon--link" target="_blank">
                         <i class="fab fa-facebook"></i>
@@ -108,8 +111,379 @@
             </div>
         </div>
     </div>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
 
-    <script defer src="js/app.js"></script>
+
+        .navbar {
+            background: #131313;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        /* navbar space */
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        /* logo formatting */
+        #navbar__pic {
+            background-color: firebrick;
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            mask-clip: padding-box;
+            -moz-backgroun-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: -50px;
+        }
+
+        /* navbar "FoxBooks" formatting */
+        #navbar__logo {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            mask-clip: padding-box;
+            -moz-backgroun-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.5rem;
+            margin-left: -445px;
+            /* Moves Logo next to the pic */
+        }
+
+        /* menu items formatting */
+        .navbar__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            margin-right: -100px;
+        }
+
+        .navbar__item {
+            height: 80px;
+        }
+
+        /* link look */
+        .navbar__links {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+        }
+
+        /* button formatting */
+        .navbar__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        /* button display */
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background-color: firebrick;
+            color: white;
+
+        }
+
+        .button:hover {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+        }
+
+        .navbar__links:hover {
+            color: firebrick;
+            transition: all 0.3s ease;
+        }
+
+        /* Sign Up Sheet */
+
+        .form__main {
+            background-color: #141414;
+        }
+
+        /* adds space between navbar and wrapper */
+        .form__main--container {
+            height: 100px;
+        }
+
+        /* basic wrapper formatting */
+        .wrapper {
+            display: grid;
+            margin: 0 auto;
+            /* center */
+            width: 450px;
+            background: #fff;
+            border-radius: 15px;
+            /* round edges */
+        }
+
+        /* formatting login header */
+        .wrapper .header {
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 125px;
+            color: #fff;
+            user-select: none;
+            border-radius: 15px 15px 0 0;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+        }
+
+        /* adds space around input fields */
+        .wrapper form {
+            padding: 10px 30px 50px 30px;
+        }
+
+        /* formatting wrapper fields */
+        .wrapper form .field {
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        /* formatting input fields  */
+        .wrapper form .field input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid lightgrey;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        /* formatting input label */
+        .wrapper form .field label {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            color: #999999;
+            font-weight: 400;
+            font-size: 17px;
+            pointer-events: none;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        /* input labels disappear on type */
+        .field input:valid~label {
+            top: 0%;
+            font-size: 16px;
+            color: firebrick;
+            background: #fff;
+
+        }
+
+        .password-wrapper {
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        /* formatting eye icon */
+        .password-wrapper .fa {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            color: #999999;
+            font-size: 17px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* eye icon hover */
+        .password-wrapper .fa:hover {
+            color: firebrick;
+        }
+
+        /* Password fields */
+        .wrapper form .password-wrapper {
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        /* Password input */
+        .wrapper form .field.password-wrapper input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid lightgrey;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        /* add space */
+        .space {
+            height: 25px;
+        }
+
+        /* aligns signup/login text */
+        .signup_link {
+            color: #262626;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* add space */
+        .space {
+            height: 25px;
+        }
+
+        /* Footer CSS */
+
+        .footer__container {
+            background-color: #141414;
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* footer logo formatting */
+        #footer__logo {
+            color: white;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        /* Social Icons */
+
+        .social__icon--link {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* add space between footer elements */
+        .social__media {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* footer line up, center on screen */
+        .social__media--wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+        }
+
+        /* social media formatting */
+        .social__icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 240px;
+        }
+
+        /* logo formatting */
+        .social__logo {
+            color: white;
+            justify-self: flex-start;
+            margin-left: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        /* footer color */
+        .website__rights {
+            color: white;
+        }
+    </style>
+
+    <script>
+        //JavaScript DOM Event for Confirm Password
+
+        // Get the password input and eye icons
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const showConfirmPasswordIcon = document.getElementById("cp_hide");
+        const hideConfirmPasswordIcon = document.getElementById("cp_hide2");
+
+        if (showConfirmPasswordIcon) {
+            showConfirmPasswordIcon.addEventListener("click", function () {
+                // Change the input type to text
+                confirmPasswordInput.type = "text";
+
+                // Show the hide icon and hide the show icon
+                hideConfirmPasswordIcon.style.display = "block";
+                showConfirmPasswordIcon.style.display = "none";
+            });
+        }
+
+        if (hideConfirmPasswordIcon) {
+            hideConfirmPasswordIcon.addEventListener("click", function () {
+                // Change the input type to password
+                confirmPasswordInput.type = "password";
+
+                // Show the show icon and hide the hide icon
+                showConfirmPasswordIcon.style.display = "block";
+                hideConfirmPasswordIcon.style.display = "none";
+            });
+        }
+    </script>
 </body>
 
 </html>
