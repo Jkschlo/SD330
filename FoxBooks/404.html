@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found</title>
+    <title>FoxBooks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- CDN for FontAwesome for logo -->
 </head>
 
 <body>
@@ -35,12 +36,13 @@
     <!-- Hero Section -->
 
     <div class="main">
-        <h2 style="font-size: 115px; color: white; margin-top: -12%;">404</h2>
-        <div class="text-container">
-            <h1 class="main__content" style="color: white;">Looks like you're lost in the Hudson.<br>Let's get you back to Campus.</h1>
-        </div>
-        <div class="button-container">
-            <a class="button" href="https://jkschlo.github.io/SD330/FoxBooks/index.html">Home</a>
+        <div class="main__container">
+            <div class="main__img--container">
+                <img src="https://jkschlo.github.io/SD330/FoxBooks/images/404.svg" alt="pic" id="main__img">
+            </div>
+            <div class="main__content">
+                <p>Page Not Found</p>
+            </div>
         </div>
     </div>
 
@@ -107,32 +109,6 @@
             font-family: 'Kumbh Sans', sans-serif;
         }
 
-        .button-container {
-            margin-top: 20px;
-        }
-
-        .return-button {
-            background-color: firebrick;
-            color: #fff;
-            font-size: 20px;
-            padding: 10px 20px;
-            border: 2px solid white;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .return-button:hover {
-            background-color: firebrick;
-        }
-
-        .text-container {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 200px;
-        }
 
         .navbar {
             background: #131313;
@@ -259,17 +235,7 @@
         /* Hero Section CSS */
 
         .main {
-            background-image: url("https://jkschlo.github.io/SD330/FoxBooks/images/river.jpg");
-            margin: 0;
-            padding: 0;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-color: #141414;
         }
 
         .main__container {
@@ -290,7 +256,8 @@
         .main__content h1 {
             font-size: 7rem;
             text-align: center;
-            background-color: white;
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
             background-size: 100%;
             -webkit-background-clip: text;
             background-clip: none;
@@ -440,7 +407,6 @@
         }
     </style>
 
-    <script></script>
 </body>
 
 </html>
