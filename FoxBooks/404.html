@@ -35,19 +35,12 @@
     <!-- Hero Section -->
 
     <div class="main">
-        <div class="main__container">
-            <div class="main__content">
-                <h2 class="h2">404</h2>
-                <div class="text-container">
-                    <h1 class="h1">Looks like you're lost in the Hudson.<br>Let's get you back to Campus.</h1>
-                </div>
-                <div class="button-container">
-                    <a class="return-button">Return to Homepage</a>
-                </div>
-            </div>
-            <div class="main__img--container">
-                <img src="https://jkschlo.github.io/SD330/FoxBooks/images/aboutUs.svg" alt="pic" id="main__img">
-            </div>
+        <h2 style="font-size: 115px; color: white; margin-top: -12%;">404</h2>
+        <div class="text-container">
+            <h1 class="main__content" style="color: white;">Looks like you're lost in the Hudson.<br>Let's get you back to Campus.</h1>
+        </div>
+        <div class="button-container">
+            <a class="button" href="https://jkschlo.github.io/SD330/FoxBooks/index.html">Home</a>
         </div>
     </div>
 
@@ -107,49 +100,19 @@
         </div>
     </div>
     <style>
-        * 
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('MaristRiver.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Kumbh Sans', sans-serif;
         }
 
-        .text-container {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 200px;
-        }
-
-        .h1 {
-            font-size: 30px;
-            color: #fff;
-            text-align: center;
-            text-decoration: double;
-            padding: -30px;
-            border-radius: 5px;
-        }
-
-        .h2 {
-            font-size: 115px;
-            color: #fff;
-        }
         .button-container {
             margin-top: 20px;
         }
 
         .return-button {
-            background-color: #ca1818;
+            background-color: firebrick;
             color: #fff;
             font-size: 20px;
             padding: 10px 20px;
@@ -160,7 +123,15 @@
         }
 
         .return-button:hover {
-            background-color: #ee2e14;
+            background-color: firebrick;
+        }
+
+        .text-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 200px;
         }
 
         .navbar {
@@ -288,7 +259,17 @@
         /* Hero Section CSS */
 
         .main {
-            background-color: #141414;
+            background-image: url("https://jkschlo.github.io/SD330/FoxBooks/images/river.jpg");
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .main__container {
@@ -309,8 +290,7 @@
         .main__content h1 {
             font-size: 7rem;
             text-align: center;
-            background-color: firebrick;
-            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-color: white;
             background-size: 100%;
             -webkit-background-clip: text;
             background-clip: none;
