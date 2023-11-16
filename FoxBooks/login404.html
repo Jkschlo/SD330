@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoxBooks</title>
+    <title>404 Page Not Found</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
@@ -20,7 +20,8 @@
             <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" id="navbar__logo">FoxBooks</a>
             <ul class="breadcrumb-navigation">
                 <li><a href="https://jkschlo.github.io/SD330/FoxBooks/index.html">Home</a></li>
-                <li>login</li>
+                <li><a href="https://jkschlo.github.io/SD330/FoxBooks/login.html">Login</a></li>
+                <li>404</li>
             </ul>
             <ul class="navbar__menu">
                 <li class="navbar__item">
@@ -36,41 +37,42 @@
         </div>
     </nav>
 
-    <!-- Sign Up Sheet Section -->
+    <!-- Hero Section -->
 
-    <div class="form__main">
-        <div class="form__main--container"></div>
-        <div class="wrapper">
-            <div class="header">Login</div>
-            <form action="#">
-                <div class="field">
-                    <input type="text" required>
-                    <label>Email Address</label>
-                </div>
-                <div class="field">
-                    <div class="password-wrapper">
-                        <input type="password" id="password" required>
-                        <span class="eye">
-                            <i id="show" class="fa fa-eye"></i>
-                            <i id="hide" class="fa fa-eye-slash" style="display: none;"></i>
-                        </span>
-                        <label>Password</label>
-                    </div>
-                </div>
-                <div class="space">
-                </div>
-                <li class="navbar__btn">
-                    <a href="https://jkschlo.github.io/SD330/FoxBooks/login404.html" class="button"> Login </a>
-                </li>
-                <div class="signup_link">Not a member? <a
-                        href="https://jkschlo.github.io/SD330/FoxBooks/signup.html">Sign Up</a></div>
-            </form>
+    <div class="main">
+        <h2 style="font-size: 115px; color: white; margin-top: -12%;">404</h2>
+        <div class="text-container">
+            <h1 class="main__content" style="color: white;">Looks like you're lost in the Hudson.<br>Let's get you back
+                to Campus.</h1>
+        </div>
+        <div class="button-container">
+            <a class="button" href="https://jkschlo.github.io/SD330/FoxBooks/index.html">Home</a>
         </div>
     </div>
 
     <!-- Footer Section -->
 
     <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                <div class="footer__link--items">
+                    <h2>Information</h2>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/contact.html">Contact Us</a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/about.html">About Us</a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/careers.html">Careers</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>Learn More</h2>
+                    <a href="https://jacksonsportfolio1.wordpress.com/">My Portfolio</a>
+                    <a href="https://github.com/Jkschlo">Other Projects</a>
+                    <a href="https://www.marist.edu/">Marist</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>404 Page</h2>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/404.html">Error</a>
+                </div>
+            </div>
+        </div>
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="footer__logo">
@@ -111,6 +113,32 @@
             font-family: 'Kumbh Sans', sans-serif;
         }
 
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .return-button {
+            background-color: firebrick;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: 2px solid white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .return-button:hover {
+            background-color: firebrick;
+        }
+
+        .text-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 200px;
+        }
 
         .navbar {
             background: #131313;
@@ -186,21 +214,21 @@
             font-size: 0.9rem;
             margin-left: -675px;
         }
- 
+
         .breadcrumb-navigation>li {
             display: inline;
         }
- 
+
         .breadcrumb-navigation>li>a {
             color: white;
             text-decoration: none;
         }
- 
+
         .breadcrumb-navigation>li>a:hover {
             color: firebrick;
             text-decoration: underline;
         }
- 
+
         .breadcrumb-navigation li+li:before {
             padding: 4px;
             content: ">";
@@ -253,6 +281,7 @@
             border-radius: 4px;
             background-color: firebrick;
             color: white;
+
         }
 
         .button:hover {
@@ -265,146 +294,72 @@
             transition: all 0.3s ease;
         }
 
-        /* Login Sheet */
+        /* Hero Section CSS */
 
-        .form__main {
-            background-color: #141414;
+        .main {
+            background-image: url("https://jkschlo.github.io/SD330/FoxBooks/images/river.jpg");
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* adds space between navbar and wrapper */
-        .form__main--container {
-            height: 100px;
-        }
-
-        /* basic wrapper formatting */
-        .wrapper {
-            display: grid;
+        .main__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             margin: 0 auto;
-            /* center */
-            width: 450px;
-            background: #fff;
-            border-radius: 15px;
-            /* round edges */
+            height: 100vh;
+            background-color: #141414;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            padding: 0 50px;
         }
 
-        /* formatting login header */
-        .wrapper .header {
-            font-size: 50px;
-            font-weight: 600;
+        /* Format "FoxBooks" */
+        .main__content h1 {
+            font-size: 7rem;
             text-align: center;
-            line-height: 125px;
-            color: #fff;
-            user-select: none;
-            border-radius: 15px 15px 0 0;
-            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-color: white;
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            margin-top: -10rem;
         }
 
-        /* adds space around input fields */
-        .wrapper form {
-            padding: 10px 30px 50px 30px;
+        /* Format "The playlist playground." */
+        .main__content p {
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 2rem;
         }
 
-        /* formatting wrapper fields */
-        .wrapper form .field {
-            height: 50px;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        /* formatting input fields  */
-        .wrapper form .field input {
-            height: 100%;
-            width: 100%;
-            outline: none;
-            font-size: 17px;
-            padding-left: 20px;
-            border: 1px solid lightgrey;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        /* formatting input label */
-        .wrapper form .field label {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            color: #999999;
-            font-weight: 400;
-            font-size: 17px;
-            pointer-events: none;
-            transform: translateY(-50%);
-            transition: all 0.3s ease;
-        }
-
-        /* input labels disappear on type */
-        .field input:valid~label {
-            top: 0%;
-            font-size: 16px;
-            color: firebrick;
-            background: #fff;
-
-        }
-
-        .password-wrapper {
-            height: 50px;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        /* formatting eye icon */
-        .password-wrapper .fa {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            color: #999999;
-            font-size: 17px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        /* eye icon hover */
-        .password-wrapper .fa:hover {
-            color: firebrick;
-        }
-
-        /* Password fields */
-        .wrapper form .password-wrapper {
-            height: 50px;
-            width: 100%;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        /* Password input */
-        .wrapper form .field.password-wrapper input {
-            height: 100%;
-            width: 100%;
-            outline: none;
-            font-size: 17px;
-            padding-left: 20px;
-            border: 1px solid lightgrey;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        /* add space */
-        .space {
-            height: 25px;
-        }
-
-        /* aligns signup/login text */
-        .signup_link {
-            color: #262626;
-            margin-top: 10px;
+        .main__img--container {
             text-align: center;
+            margin-top: 4rem;
         }
 
-        /* add space */
-        .space {
-            height: 25px;
+        #main__img {
+            height: 325px;
+            width: 375px;
         }
+
 
         /* Footer CSS */
 
@@ -425,6 +380,52 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 2rem;
+        }
+
+        .footer__links {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer__link--wrapper {
+            display: flex;
+        }
+
+        /* formats footer link items in column and correct spacing */
+        .footer__link--items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 16px;
+            text-align: left;
+            width: 160px;
+            box-sizing: border-box;
+        }
+
+        /* adds a bit of space between header and items */
+        .footer__link--items h2 {
+            margin-bottom: 16px;
+        }
+
+        /* formats h2 */
+        .footer__link--items>h2 {
+            font-size: 1.5rem;
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+        }
+
+        .footer__link--items a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
         }
 
         /* Social Icons */
@@ -477,38 +478,7 @@
         }
     </style>
 
-    <script>
-        //JavaScript DOM Event for password
-
-        // Get the password input and eye icons
-        const passwordInput = document.getElementById("password");
-        const showPasswordIcon = document.getElementById("hide");
-        const hidePasswordIcon = document.getElementById("show");
-
-        if (showPasswordIcon) {
-            showPasswordIcon.addEventListener("click", function () {
-                // Change the input type to text
-                passwordInput.type = "text";
-
-                // Show the hide icon and hide the show icon
-                hidePasswordIcon.style.display = "block";
-                showPasswordIcon.style.display = "none";
-            });
-        }
-
-        // Add a click event listener to the hide icon
-        if (hidePasswordIcon) {
-            hidePasswordIcon.addEventListener("click", function () {
-                // Change the input type to password
-                passwordInput.type = "password";
-
-                // Show the show icon and hide the hide icon
-                showPasswordIcon.style.display = "block";
-                hidePasswordIcon.style.display = "none";
-            });
-        }
-
-    </script>
+    <script></script>
 </body>
 
 </html>
