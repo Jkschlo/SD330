@@ -18,12 +18,16 @@
             <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" id="navbar__pic"><i
                     class="fa-solid fa-book"></i></a>
             <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" id="navbar__logo">FoxBooks</a>
+            <ul class="breadcrumb-navigation">
+                <li><a href="https://jkschlo.github.io/SD330/FoxBooks/index.html">Home</a></li>
+                <li>About Us</li>
+            </ul>
             <ul class="navbar__menu">
                 <li class="navbar__item">
                     <a href="https://jkschlo.github.io/SD330/FoxBooks/index.html" class="navbar__links"> Home </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="https://jkschlo.github.io/SD330/FoxBooks/inventory.html" class="navbar__links"> Books </a>
+                    <a href="https://jkschlo.github.io/SD330/FoxBooks/courses.html" class="navbar__links"> Courses </a>
                 </li>
                 <li class="navbar__btn">
                     <a href="https://jkschlo.github.io/SD330/FoxBooks/login.html" class="button"> Login </a>
@@ -168,8 +172,40 @@
             cursor: pointer;
             text-decoration: none;
             font-size: 2.5rem;
-            margin-left: -815px;
+            margin-left: -660px;
             /* Moves Logo next to the pic */
+        }
+
+        /* Bread Crumbs */
+        .breadcrumb-navigation {
+            padding: 0 1rem;
+            background-color: #131313;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 0.9rem;
+            margin-left: -675px;
+        }
+
+        .breadcrumb-navigation>li {
+            display: inline;
+        }
+
+        .breadcrumb-navigation>li>a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb-navigation>li>a:hover {
+            color: firebrick;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-navigation li+li:before {
+            padding: 4px;
+            content: ">";
         }
 
         /* menu items formatting */
