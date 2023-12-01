@@ -467,8 +467,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             fetch("https://jkschlo.github.io/SD330/foxbooks.json")
-                .then(response => response.json())
-                .then(courses => displayCourses(courses));
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(courses => displayCourses(courses))
+                .catch(error => console.error("Error fetching data:", error));
         });
 
         function displayCourses(courses) {
