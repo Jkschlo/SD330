@@ -43,7 +43,6 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>Textbooks</h1>
-                <p>Marist College</p>
             </div>
             <div class="main__img--container">
             </div>
@@ -454,10 +453,7 @@
 
                 // Get the courseID from the URL
                 const urlParams = new URLSearchParams(window.location.search);
-                console.log('URL Parameters:', urlParams); // Debugging line
                 const courseID = urlParams.get('courseID');
-                console.log('Extracted Course ID:', courseID); // Debugging line
-
                 const booksContainer = document.getElementById('jsonBooks');
                 let htmlString = `<h2>Here are the books for <strong>${courseID}</strong></h2>`;
 
