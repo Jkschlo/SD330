@@ -46,16 +46,10 @@
             </div>
             <div class="main__img--container">
             </div>
-            <ul class="jsonContent">
+            <ul id="jsonContent">
 
             </ul>
         </div>
-    </div>
-
-    <!-- Course List Section -->
-
-    <div class="course-list" id="courseList">
-        <!-- Courses will be dynamically added here -->
     </div>
 
     <!-- Footer Section -->
@@ -468,16 +462,32 @@
     </style>
 
     <script>
-        const listEl = document.querySelector('div.course-list');
+        // Function to load the JSON file and display the courses
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://jkschlo.github.io/SD330/foxbooks.json');
+                const data = await response.json();
+                const jsonContent = document.getElementById('jsonContent');
+                let coursesHtml = '';
 
-        fetch("https://jkschlo.github.io/SD330/foxbooks.json")
-            .then(res => res.json())
-            .then(data => {
-                data.forEach(post => {
-                    listEl.insertAdjacentHTML('beforeend', `<li>${post.title}</li>`);
+                data.courses.forEach(course => {
+                    coursesHtml += `<li>
+                            <h3><a href="textbooks.html?courseID=${course.courseID}">${course.title}</a></h3>
+                            <p><strong>Course ID:</strong> ${course.courseID}</p>
+                            <p><strong>Semester:</strong> ${course.semester}</p>
+                            <p><strong>Professor:</strong> ${course.professor}</p>
+                            <p><strong>Credits:</strong> ${course.credits}</p>
+                            <p><strong>Room Style:</strong> ${course.roomStyle}</p>
+                          </li>`;
                 });
-            })
-            .catch(error => console.error('Error fetching data:', error));
+
+                jsonContent.innerHTML = coursesHtml;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
     </script>
 </body>
 
