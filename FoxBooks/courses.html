@@ -46,6 +46,9 @@
             </div>
             <div class="main__img--container">
             </div>
+            <ul class="jsonContent">
+
+            </ul>
         </div>
     </div>
 
@@ -465,51 +468,16 @@
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("https://jkschlo.github.io/SD330/foxbooks.json")
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(courses => displayCourses(courses))
-                .catch(error => console.error("Error fetching data:", error));
-        });
+        const listEl = document.querySelector('div.course-list');
 
-        function displayCourses(courses) {
-            const courseListContainer = document.getElementById("courseList");
-
-            courses.forEach(course => {
-                const courseElement = document.createElement("div");
-                courseElement.classList.add("course");
-
-                const titleElement = document.createElement("h2");
-                titleElement.textContent = course.title;
-
-                const courseIDElement = document.createElement("p");
-                courseIDElement.textContent = "Course ID: " + course.courseID;
-
-                const semesterElement = document.createElement("p");
-                semesterElement.textContent = "Semester: " + course.semester;
-
-                const professorElement = document.createElement("p");
-                professorElement.textContent = "Professor: " + course.professor;
-
-                const creditsElement = document.createElement("p");
-                creditsElement.textContent = "Credits: " + course.credits;
-
-                // Add other course attributes as needed
-
-                courseElement.appendChild(titleElement);
-                courseElement.appendChild(courseIDElement);
-                courseElement.appendChild(semesterElement);
-                courseElement.appendChild(professorElement);
-                courseElement.appendChild(creditsElement);
-
-                courseListContainer.appendChild(courseElement);
-            });
-        }
+        fetch("https://jkschlo.github.io/SD330/foxbooks.json")
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(post => {
+                    listEl.insertAdjacentHTML('beforeend', `<li>${post.title}</li>`);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
     </script>
 </body>
 

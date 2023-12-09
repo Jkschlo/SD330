@@ -6,7 +6,7 @@
         "semester": "Fall",
         "professor": "Andrew Tokash",
         "credits": 4,
-        "bookIDs": [1, 2]
+        "roomStyle": "classroom"
       },
       {
         "courseID": "CMPT 436",
@@ -14,7 +14,7 @@
         "semester": "Spring",
         "professor": "Bowu Zhang",
         "credits": 4,
-        "bookIDs": [3, 4]
+        "roomStyle": "classroom"
       },
       {
         "courseID": "Math 205",
@@ -22,7 +22,7 @@
         "semester": "Fall",
         "professor": "Peter Krog",
         "credits": 3,
-        "bookIDs": [5, 6]
+        "roomStyle": "Lecture Hall"
       },
       {
         "courseID": "CMPT 416",
@@ -30,7 +30,7 @@
         "semester": "Fall",
         "professor": "Casimer DeCusatis",
         "credits": 4,
-        "bookIDs": [7, 8]
+        "roomStyle": "classroom"
       },
       {
         "courseID": "CMPT 120",
@@ -38,7 +38,7 @@
         "semester": "Spring",
         "professor": "Cathy Martensen",
         "credits": 4,
-        "bookIDs": [9, 10]
+        "roomStyle": "Lecture Hall"
       },
       {
         "courseID": "CMPT 306",
@@ -46,7 +46,7 @@
         "semester": "Fall",
         "professor": "Bowu Zhang",
         "credits": 4,
-        "bookIDs": [11, 12]
+        "roomStyle": "classroom"
       },
       {
         "courseID": "MATH 130",
@@ -54,7 +54,7 @@
         "semester": "Fall",
         "professor": "Tracey McGrail",
         "credits": 3,
-        "bookIDs": [13, 14]
+        "roomStyle": "Lecture Hall"
       },
       {
         "courseID": "MATH 241",
@@ -62,13 +62,12 @@
         "semester": "Spring",
         "professor": "Matthew Glomski",
         "credits": 4,
-        "bookIDs": [15, 16]
+        "roomStyle": "classroom"
       }
     ],
     "books": [
       {
         "courseID": "CMPT 330",
-        "bookID": 1,
         "title": "Interaction Design 5th Edition",
         "author": "Helen Sharp",
         "year": 2019,
@@ -76,7 +75,6 @@
       },
       {
         "courseID": "CMPT 330",
-        "bookID": 2,
         "title": "Thinking in Systems",
         "author": "Donella H. Meadows",
         "year": 2008,
@@ -84,7 +82,6 @@
       },
       {
         "courseID": "CMPT 436",
-        "bookID": 3,
         "title": "Understanding Cryptography",
         "author": "Christof Paar",
         "year": 2009,
@@ -92,7 +89,6 @@
       },
       {
         "courseID": "CMPT 436",
-        "bookID": 4,
         "title": "Cryptography: An Introduction 3rd Edition",
         "author": "Nigel Smart",
         "year": 2004,
@@ -100,7 +96,6 @@
       },
       {
         "courseID": "MATH 205",
-        "bookID": 5,
         "title": "Discrete Mathematics",
         "author": "Richard Johnsonbaugh",
         "year": 2017,
@@ -108,7 +103,6 @@
       },
       {
         "courseID": "MATH 205",
-        "bookID": 6,
         "title": "Discrete Mathematics and Its Applications",
         "author": "Kenneth H. Rosen",
         "year": 2018,
@@ -116,7 +110,6 @@
       },
       {
         "courseID": "CMPT 416",
-        "bookID": 7,
         "title": "Elementary Information Systems",
         "author": "Richard E. Smith",
         "year": 2019,
@@ -124,7 +117,6 @@
       },
       {
         "courseID": "CMPT 416",
-        "bookID": 8,
         "title": "Cybersecurity Essentials",
         "author": "Charles J. Brooks",
         "year": 2018,
@@ -132,7 +124,6 @@
       },
       {
         "courseID": "CMPT 120",
-        "bookID": 9,
         "title": "Python Programming: An Introduction to Computer Science",
         "author": "John Zelle",
         "year": 2016,
@@ -140,7 +131,6 @@
       },
       {
         "courseID": "CMPT 120",
-        "bookID": 10,
         "title": "Learning Python",
         "author": "Mark Lutz",
         "year": 2013,
@@ -148,7 +138,6 @@
       },
       {
         "courseID": "CMPT 306",
-        "bookID": 11,
         "title": "Data Communication and Computer Networks: A Business User's Approach",
         "author": "Jill West",
         "year": 2022,
@@ -156,7 +145,6 @@
       },
       {
         "courseID": "CMPT 306",
-        "bookID": 12,
         "title": "Business Data Communications and Networking",
         "author": "Jerry FitzGerald",
         "year": 2020,
@@ -164,7 +152,6 @@
       },
       {
         "courseID": "MATH 130",
-        "bookID": 13,
         "title": "Introduction to Modern Statistics",
         "author": "Mine Çetinkaya-Rundel",
         "year": 2021,
@@ -172,7 +159,6 @@
       },
       {
         "courseID": "MATH 130",
-        "bookID": 14,
         "title": "Introduction to Statistics: Fundamental Concepts and Procedures of Data Analysis",
         "author": "Howard M. Reid",
         "year": 2013,
@@ -180,7 +166,6 @@
       },
       {
         "courseID": "MATH 241",
-        "bookID": 15,
         "title": "Calculus",
         "author": "Ron Larson",
         "year": 2013,
@@ -188,7 +173,6 @@
       },
       {
         "courseID": "MATH 241",
-        "bookID": 16,
         "title": "Single Variable Calculus: Early Transcendentals",
         "author": "James Stewart",
         "year": 2015,
