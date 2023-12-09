@@ -6,7 +6,7 @@
         "semester": "Fall",
         "professor": "Andrew Tokash",
         "credits": 4,
-        "roomStyle": "classroom"
+        "roomStyle": "Classroom"
       },
       {
         "courseID": "CMPT 436",
@@ -14,7 +14,7 @@
         "semester": "Spring",
         "professor": "Bowu Zhang",
         "credits": 4,
-        "roomStyle": "classroom"
+        "roomStyle": "Classroom"
       },
       {
         "courseID": "MATH 205",
@@ -30,7 +30,7 @@
         "semester": "Fall",
         "professor": "Casimer DeCusatis",
         "credits": 4,
-        "roomStyle": "classroom"
+        "roomStyle": "Classroom"
       },
       {
         "courseID": "CMPT 120",
@@ -46,7 +46,7 @@
         "semester": "Fall",
         "professor": "Bowu Zhang",
         "credits": 4,
-        "roomStyle": "classroom"
+        "roomStyle": "Classroom"
       },
       {
         "courseID": "MATH 130",

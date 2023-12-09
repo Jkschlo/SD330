@@ -42,13 +42,14 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>Courses</h1>
-                <p>Marist College</p>
             </div>
             <div class="main__img--container">
             </div>
-            <ul id="jsonContent">
+            <div id="bookContainer">
+                <ul id="jsonContent" style="list-style-type: none;">
 
-            </ul>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -282,7 +283,7 @@
             align-items: center;
             flex-direction: column;
             margin: 0 auto;
-            height: 100vh;
+            height: 185vh;
             background-color: #141414;
             z-index: 1;
             width: 100%;
@@ -342,6 +343,15 @@
             width: 50%;
             max-width: 500px;
             background-color: #fff;
+        }
+
+        #bookContainer {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid firebrick;
+            border-radius: 1%;
+            background-color: #131313;
+            max-width: 40%;
         }
 
         /* Footer CSS */
