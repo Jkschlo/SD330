@@ -459,7 +459,7 @@
                 console.log('Extracted Course ID:', courseID); // Debugging line
 
                 const booksContainer = document.getElementById('jsonBooks');
-                let htmlString = `<h2>Here are the books for Course ID: <strong>${courseID}</strong></h2>`;
+                let htmlString = `<h2>Here are the books for <strong>${courseID}</strong></h2>`;
 
                 // Filter books based on the selected courseID
                 const filteredBooks = data.books.filter(book => book.courseID === courseID);
