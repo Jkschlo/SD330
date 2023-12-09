@@ -46,7 +46,7 @@
             </div>
             <div class="main__img--container">
             </div>
-            <ul id="jsonBooks">
+            <ul id="jsonBooks" style="list-style-type: none;">
 
             </ul>
         </div>
@@ -282,7 +282,7 @@
             align-items: center;
             flex-direction: column;
             margin: 0 auto;
-            height: 100vh;
+            height: 120vh;
             background-color: #141414;
             z-index: 1;
             width: 100%;
@@ -327,6 +327,38 @@
             width: 375px;
         }
 
+        #bookContainer {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid firebrick;
+            border-radius: 1%;
+            background-color: #131313;
+            max-width: 70%;
+        }
+
+        h3 {
+            font-size: 2rem;
+            line-height: 4rem;
+            cursor: pointer;
+            color: firebrick;
+        }
+
+        h2 {
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: whitesmoke;
+        }
 
         /* Footer CSS */
 
@@ -455,7 +487,7 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const courseID = urlParams.get('courseID');
                 const booksContainer = document.getElementById('jsonBooks');
-                let htmlString = `<h2>Here are the books for <strong>${courseID}</strong></h2>`;
+                let htmlString = `<h2>Books for <strong>${courseID}:</strong></h2>`;
 
                 // Filter books based on the selected courseID
                 const filteredBooks = data.books.filter(book => book.courseID === courseID);

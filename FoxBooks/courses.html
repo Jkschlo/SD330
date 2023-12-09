@@ -283,7 +283,7 @@
             align-items: center;
             flex-direction: column;
             margin: 0 auto;
-            height: 260vh;
+            height: 290vh;
             background-color: #141414;
             z-index: 1;
             width: 100%;
@@ -348,20 +348,42 @@
         #bookContainer {
             margin: 20px;
             padding: 10px;
-            border: 2px solid firebrick;
-            border-radius: 1%;
             background-color: #131313;
             max-width: 70%;
         }
 
         h3 {
             font-size: 2rem;
-            line-height: 3rem;
+            line-height: 4rem;
+            cursor: pointer;
+            background-color: firebrick;
+            background-image: linear-gradient(to top, firebrick 0%, white 200%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
         }
 
         p {
             font-size: 1.5rem;
             color: whitesmoke;
+        }
+
+        a {
+            text-decoration: none;
+            color: firebrick;
+        }
+
+        a:hover {
+            background-color: firebrick;
+            background-size: 100%;
+            -webkit-background-clip: text;
+            background-clip: none;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
         }
 
         /* Footer CSS */
